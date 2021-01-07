@@ -15,12 +15,19 @@ from page import Page
 BASE_URL = "https://www.urionlinejudge.com.br/"
 
 
-def search(url: str, search_name: str):
-    r = requests.get(url)
-    soup = BeautifulSoup(r.text, 'html.parser')
+def search(relative_url: str):
+    ret = []
+    search_store = set()
+    i = 0
+    while True:
+        i += 1
+        r = requests.get(BASE_URL + relative_url, {'page': i, 'direction': 'DESC'})
+        if r.status_code == 200:
+            search_store.add(Page(r))
+        else:
+            break
 
 
 def main():
-    url=input()
-    search_name=input()
-    result=search(url, search_name)
+    relative_url = input()
+    result = search(relative_url)
