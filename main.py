@@ -18,6 +18,6 @@ def search(url: str, search_name: str):
 
 
 def main():
-    url = input()
-    search_name = input()
-    r = requests.get(url, search_name)
+    url=input()
+    search_name=input()
+    result=search(url, search_name)
