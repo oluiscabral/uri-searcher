@@ -8,25 +8,9 @@ The idea is to provide the URL of a list on this site,
 then the program will return the searched profile if it exists
 """
 
-import requests
-from bs4 import BeautifulSoup, BeautifulStoneSoup
-
-BASE_URL = "https://www.urionlinejudge.com.br/"
-
-
-def search(relative_url: str):
-    ret = []
-    search_store = set()
-    i = 0
-    while True:
-        i += 1
-        r = requests.get(BASE_URL + relative_url, {'page': i, 'direction': 'DESC'})
-        if r.status_code == 200:
-            search_store.add(Page(r))
-        else:
-            break
-
+from searcher import URIOJSearcher
 
 def main():
-    relative_url = input()
-    result = search(relative_url)
+    URIOJSearcher.search()
+
+main()
