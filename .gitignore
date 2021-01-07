@@ -130,3 +130,7 @@ dmypy.json
 
 # Ignore vscode settings
 .vscode
+
+# Ignore liclipse settings
+.pydevproject
+.settings
