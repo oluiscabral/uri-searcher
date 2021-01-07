@@ -9,7 +9,8 @@ then the program will return the searched profile if it exists
 """
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, BeautifulStoneSoup
+from page import Page
 
 
 def search(url: str, search_name: str):
