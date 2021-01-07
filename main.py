@@ -10,7 +10,6 @@ then the program will return the searched profile if it exists
 
 import requests
 from bs4 import BeautifulSoup, BeautifulStoneSoup
-from page import Page
 
 BASE_URL = "https://www.urionlinejudge.com.br/"
 
