@@ -12,6 +12,8 @@ import requests
 from bs4 import BeautifulSoup, BeautifulStoneSoup
 from page import Page
 
+BASE_URL = "https://www.urionlinejudge.com.br/"
+
 
 def search(url: str, search_name: str):
     r = requests.get(url)
